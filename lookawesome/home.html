@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Hide Header & Footer</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background: black;
+            color: white;
+        }
+
+
+        header{
+            width: 100%;
+            padding: 15px 25px;
+            background: #222;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 4px 20px rgba(0,255,255,0.2);
+            transition: 0.4s ease;
+        }
+
+        header.hide {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        header .title{
+            font-size: 28px;
+            font-weight: bold;
+            color: cyan;
+            text-shadow: 0 0 8px cyan;
+        }
+
+        .menu-btn{
+            font-size: 35px;
+            cursor: pointer;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .menu-btn:hover{
+            color: cyan;
+            text-shadow: 0 0 8px cyan;
+        }
+
+    
+        .menu{
+            position: fixed;
+            top: 70px;
+            right: 20px;
+            width: 180px;
+            background: #111;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            padding: 15px 0;
+            box-shadow: 0 0 20px rgba(0,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: fadeIn 0.25s ease;
+        }
+
+        .menu a{
+            padding: 12px 20px;
+            color: white;
+            text-decoration: none;
+            transition: 0.25s;
+        }
+
+        .menu a:hover{
+            background: rgba(0,255,255,0.2);
+            color: cyan;
+            text-shadow: 0 0 8px cyan;
+        }
+
+        @keyframes fadeIn{
+            from{opacity: 0; transform: translateY(-10px);}
+            to{opacity: 1; transform: translateY(0);}
+        }
+
+
+
+    
+        footer{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 15px 0;
+            background: #111;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            backdrop-filter: blur(6px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 -4px 25px rgba(0, 255, 255, 0.2);
+            transition: 0.4s ease;
+        }
+
+        footer.hide{
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        footer a{
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            transition: 0.3s ease;
+            padding: 8px 12px;
+            border-radius: 10px;
+        }
+
+        footer a:hover{
+            color: cyan;
+            text-shadow: 0 0 8px cyan;
+            transform: translateY(-5px) scale(1.1);
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        footer a span{
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        
+        .content {
+            padding-top: 120px;
+            padding-bottom: 120px;
+            text-align: center;
+            font-size: 30px;
+        }
+        
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 15px;
+    padding: 20px;
+}
+
+.image-grid img {
+    width: 100%;
+    height: auto;            
+    border-radius: 12px;     
+    object-fit: cover;
+    transition: 0.3s ease;
+}
+
+.image-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px cyan;
+}
+
+
+@media (max-width: 480px) {
+    .image-grid {
+        gap: 10px;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+
+    
+    <header id="header">
+        <div class="title">Look Awesome 💖</div>
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+    </header>
+
+    
+    <div class="menu" id="menu">
+        <a href="class.html">class</a>
+        <a href="login.html">login</a>
+        <a href="post.html">new post</a>
+        <a href="about.html">about us</a>
+        <a href="help.html">❓ Help</a>
+    </div>
+
+    
+    <div class="content">
+
+        <div class="image-grid">
+            <a href="f1.html"><img src="1.jpg" alt=""></a>
+            <a href="f2.html"><img src="1.jpg" alt=""></a>
+            <a href="f3.html"><img src="1.jpg" alt=""></a>
+            <a href="f4.html"><img src="1.jpg" alt=""></a>
+            <a href="f5.html"><img src="1.jpg" alt=""></a>
+            <a href="f6.html"><img src="1.jpg" alt=""></a>
+            <a href="f7.html"><img src="1.jpg" alt=""></a>
+            <a href="f8.html"><img src="1.jpg" alt=""></a>
+            <a href="f9.html"><img src="1.jpg" alt=""></a>
+            <a href="f10.html"><img src="1.jpg" alt=""></a>
+            <a href="f11.html"><img src="1.jpg" alt=""></a>
+            <a href="f12.html"><img src="1.jpg" alt=""></a>
+            <a href="f13.html"><img src="1.jpg" alt=""></a>
+            <a href="f14.html"><img src="1.jpg" alt=""></a>
+            <a href="f15.html"><img src="1.jpg" alt=""></a>
+            <a href="f16.html"><img src="1.jpg" alt=""></a>
+            <a href="f17.html"><img src="1.jpg" alt=""></a>
+            <a href="f18.html"><img src="1.jpg" alt=""></a>
+            <a href="f19.html"><img src="1.jpg" alt=""></a>
+            <a href="f20.html"><img src="1.jpg" alt=""></a>
+            <a href="f21.html"><img src="1.jpg" alt=""></a>
+            <a href="f22.html"><img src="1.jpg" alt=""></a>
+            <a href="f23.html"><img src="1.jpg" alt=""></a>
+            <a href="f24.html"><img src="1.jpg" alt=""></a>
+            <a href="f25.html"><img src="1.jpg" alt=""></a>
+            <a href="f26.html"><img src="1.jpg" alt=""></a>
+            <a href="f27.html"><img src="1.jpg" alt=""></a>
+            <a href="f28.html"><img src="1.jpg" alt=""></a>
+            <a href="f29.html"><img src="1.jpg" alt=""></a>
+            <a href="f30.html"><img src="1.jpg" alt=""></a>
+            <a href="f31.html"><img src="1.jpg" alt=""></a>
+            <a href="f32.html"><img src="1.jpg" alt=""></a>
+            <a href="f33.html"><img src="1.jpg" alt=""></a>
+            <a href="f34.html"><img src="1.jpg" alt=""></a>
+            <a href="f35.html"><img src="1.jpg" alt=""></a>
+            <a href="f36.html"><img src="1.jpg" alt=""></a>
+            <a href="f37.html"><img src="1.jpg" alt=""></a>
+            <a href="f38.html"><img src="1.jpg" alt=""></a>
+            <a href="f39.html"><img src="1.jpg" alt=""></a>
+            <a href="f40.html"><img src="1.jpg" alt=""></a>
+            <a href="f41.html"><img src="1.jpg" alt=""></a>
+            <a href="f42.html"><img src="1.jpg" alt=""></a>
+            <a href="f43.html"><img src="1.jpg" alt=""></a>
+            <a href="f44.html"><img src="1.jpg" alt=""></a>
+            <a href="f45.html"><img src="1.jpg" alt=""></a>
+            <a href="f46.html"><img src="1.jpg" alt=""></a>
+            <a href="f47.html"><img src="1.jpg" alt=""></a>
+            <a href="f48.html"><img src="1.jpg" alt=""></a>
+            <a href="f49.html"><img src="1.jpg" alt=""></a>
+            <a href="f50.html"><img src="1.jpg" alt=""></a>
+            <a href="f51.html"><img src="1.jpg" alt=""></a>
+            <a href="f52.html"><img src="1.jpg" alt=""></a>
+            <a href="f53.html"><img src="1.jpg" alt=""></a>
+            <a href="f54.html"><img src="1.jpg" alt=""></a>
+            <a href="f55.html"><img src="1.jpg" alt=""></a>
+            <a href="f56.html"><img src="1.jpg" alt=""></a>
+            <a href="f57.html"><img src="1.jpg" alt=""></a>
+            <a href="f58.html"><img src="1.jpg" alt=""></a>
+            <a href="f59.html"><img src="1.jpg" alt=""></a>
+            <a href="f60.html"><img src="1.jpg" alt=""></a>
+            <a href="f61.html"><img src="1.jpg" alt=""></a>
+            <a href="f62.html"><img src="1.jpg" alt=""></a>
+            <a href="f63.html"><img src="1.jpg" alt=""></a>
+            <a href="f64.html"><img src="1.jpg" alt=""></a>
+            <a href="f65.html"><img src="1.jpg" alt=""></a>
+            <a href="f66.html"><img src="1.jpg" alt=""></a>
+            <a href="f67.html"><img src="1.jpg" alt=""></a>
+            <a href="f68.html"><img src="1.jpg" alt=""></a>
+            <a href="f69.html"><img src="1.jpg" alt=""></a>
+            <a href="f70.html"><img src="1.jpg" alt=""></a>
+            <a href="f71.html"><img src="1.jpg" alt=""></a>
+            <a href="f72.html"><img src="1.jpg" alt=""></a>
+            <a href="f73.html"><img src="1.jpg" alt=""></a>
+            <a href="f74.html"><img src="1.jpg" alt=""></a>
+            <a href="f75.html"><img src="1.jpg" alt=""></a>
+            <a href="f76.html"><img src="1.jpg" alt=""></a>
+            <a href="f77.html"><img src="1.jpg" alt=""></a>
+            <a href="f78.html"><img src="1.jpg" alt=""></a> 
+            <a href="f79.html"><img src="1.jpg" alt=""></a>
+            <a href="f80.html"><img src="1.jpg" alt=""></a>
+            <a href="f81.html"><img src="1.jpg" alt=""></a>
+            <a href="f82.html"><img src="1.jpg" alt=""></a>
+            <a href="f83.html"><img src="1.jpg" alt=""></a>
+            <a href="f84.html"><img src="1.jpg" alt=""></a>
+            <a href="f85.html"><img src="1.jpg" alt=""></a>
+            <a href="f86.html"><img src="1.jpg" alt=""></a> 
+            <a href="f87.html"><img src="1.jpg" alt=""></a>
+            <a href="f88.html"><img src="1.jpg" alt=""></a>
+            <a href="f89.html"><img src="1.jpg" alt=""></a>
+            <a href="f90.html"><img src="1.jpg" alt=""></a>
+            <a href="f91.html"><img src="1.jpg" alt=""></a>
+            <a href="f92.html"><img src="1.jpg" alt=""></a>
+            <a href="f93.html"><img src="1.jpg" alt=""></a>
+            <a href="f94.html"><img src="1.jpg" alt=""></a> 
+            <a href="f95.html"><img src="1.jpg" alt=""></a>
+            <a href="f96.html"><img src="1.jpg" alt=""></a>
+            <a href="f97.html"><img src="1.jpg" alt=""></a>
+            <a href="f98.html"><img src="1.jpg" alt=""></a> 
+            <a href="f99.html"><img src="1.jpg" alt=""></a>
+            <a href="f100.html"><img src="1.jpg" alt=""></a>
+            <a href=""><img src="1.jpg" alt=""></a>
+            <a href=""><img src="1.jpg" alt=""></a>
+            <a href=""><img src="1.jpg" alt=""></a>
+            <a href=""><img src="1.jpg" alt=""></a>
+            <a href=""><img src="1.jpg" alt=""></a>
+            <a href=""><img src="1.jpg" alt=""></a> 
+            
+        </div>
+    
+    </div>
+    
+
+
+    <footer id="footer">
+        <a href="" class="home">🏯 <span>Home</span></a>
+        <a href="find.html" class="find">🌏 <span>Find Us</span></a>
+        <a href="share.html" class="share">💬 <span>Share</span></a>
+        <a href="setting.html" class="setting">⚙ <span>Setting</span></a>
+    </footer>
+
+    
+    <script>
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const current = window.scrollY;
+            const header = document.getElementById("header");
+            const footer = document.getElementById("footer");
+
+            if (current > lastScroll) {
+        
+                header.classList.add("hide");
+                footer.classList.add("hide");
+            } else {
+            
+                header.classList.remove("hide");
+                footer.classList.remove("hide");
+            }
+
+            lastScroll = current;
+        });
+
+        function toggleMenu(){
+            const menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+
+</body>
+</html>
