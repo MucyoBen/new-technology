@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Collection - Look Awesome</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
+body{background:black;color:white;}
+
+/* Header */
+header{
+    width:100%;
+    padding:15px 25px;
+    background:#222;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1000;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 4px 20px rgba(0,255,255,0.2);
+    transition:0.4s ease;
+}
+header.hide{transform:translateY(-100%);opacity:0;}
+header .title{font-size:28px;font-weight:bold;color:cyan;text-shadow:0 0 8px cyan;}
+.menu-btn{font-size:35px;cursor:pointer;color:white;transition:0.3s;}
+.menu-btn:hover{color:cyan;text-shadow:0 0 8px cyan;}
+
+/* Menu */
+.menu{
+    position:fixed;
+    top:70px;
+    right:20px;
+    width:180px;
+    background:#111;
+    border-radius:10px;
+    display:none;
+    flex-direction:column;
+    padding:15px 0;
+    box-shadow:0 0 20px rgba(0,255,255,0.3);
+    border:1px solid rgba(255,255,255,0.2);
+}
+.menu a{padding:12px 20px;color:white;text-decoration:none;transition:0.25s;}
+.menu a:hover{background:rgba(0,255,255,0.2);color:cyan;text-shadow:0 0 8px cyan;}
+
+/* Footer */
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    padding:15px 0;
+    background:#111;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    backdrop-filter:blur(6px);
+    border-top:1px solid rgba(255,255,255,0.1);
+    box-shadow:0 -4px 25px rgba(0,255,255,0.2);
+    transition:0.4s ease;
+}
+footer.hide{transform:translateY(100%);opacity:0;}
+footer a{color:#fff;text-decoration:none;font-size:18px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:5px;transition:0.3s ease;padding:8px 12px;border-radius:10px;}
+footer a:hover{color:cyan;text-shadow:0 0 8px cyan;transform:translateY(-5px) scale(1.1);background:rgba(0,255,255,0.1);}
+footer a span{font-size:14px;opacity:0.8;}
+
+/* Content */
+.content{
+    padding-top:120px;
+    padding-bottom:120px;
+    text-align:center;
+}
+
+/* Section Title */
+.section-title{
+    font-size:36px;
+    color:cyan;
+    text-shadow:0 0 15px cyan;
+    margin-bottom:25px;
+}
+
+/* Category Tabs */
+.category-tabs{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:30px;
+}
+.category-tabs button{
+    padding:10px 20px;
+    border:2px solid cyan;
+    border-radius:10px;
+    background:transparent;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+.category-tabs button.active,
+.category-tabs button:hover{
+    background:cyan;
+    color:black;
+    box-shadow:0 0 10px cyan;
+}
+
+/* Shop Container */
+.shop-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:0 20px;
+}
+
+/* Cards */
+.card{
+    width:220px;
+    background: linear-gradient(135deg, rgba(0,255,255,0.1), rgba(255,0,255,0.1));
+    border:2px solid cyan;
+    border-radius:15px;
+    padding:15px;
+    text-align:center;
+    transition:0.3s ease;
+}
+.card:hover{
+    transform: scale(1.05);
+    box-shadow:0 0 20px cyan,0 0 40px magenta;
+}
+.card img{
+    width:100%;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+.card h3{
+    font-size:18px;
+    color:white;
+    text-shadow:0 0 8px cyan;
+    margin-bottom:10px;
+}
+.card button{
+    padding:10px 20px;
+    border:none;
+    border-radius:10px;
+    background:linear-gradient(135deg, cyan, magenta);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s ease;
+}
+.card button:hover{
+    transform:scale(1.1);
+    box-shadow:0 0 15px cyan;
+}
+
+@media(max-width:600px){
+    .card{width:45%;}
+    .category-tabs{gap:8px;}
+}
+</style>
+</head>
+<body>
+
+<header id="header">
+    <div class="title">Look Awesome 💖</div>
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+</header>
+
+<div class="menu" id="menu">
+    <a href="#">class</a>
+    <a href="login.html">login</a>
+    <a href="post.html">new post</a>
+    <a href="about.html">about us</a>
+    <a href="help.html">❓ Help</a>
+</div>
+
+<div class="content">
+    <h1 class="section-title">Our Collection</h1>
+
+    <div class="category-tabs">
+        <button class="tab-btn active" data-category="all">All</button>
+       <a href="f1.html"><button class="tab-btn" data-category="bags">Bags</button></a> 
+        <button class="tab-btn" data-category="skirts">Skirts</button>
+        <button class="tab-btn" data-category="pants">Pants</button>
+        <button class="tab-btn" data-category="shirts">Shirts</button>
+        <button class="tab-btn" data-category="jackets">Jackets</button>
+        <button class="tab-btn" data-category="shoes">Shoes</button>
+        <button class="tab-btn" data-category="hats">Hats</button>
+        <button class="tab-btn" data-category="dresses">Dresses</button>
+    </div>
+
+    <div class="shop-container" id="shopContainer">
+        <!-- Cards inserted by JS -->
+    </div>
+</div>
+
+<footer id="footer">
+    <a href="index.html" class="home">🏯 <span>Home</span></a>
+    <a href="find.html" class="find">🌏 <span>Find Us</span></a>
+    <a href="share.html" class="share">💬 <span>Share</span></a>
+    <a href="setting.html" class="setting">⚙ <span>Setting</span></a>
+</footer>
+
+<script>
+// Auto-hide header & footer
+let lastScroll = 0;
+window.addEventListener("scroll", () => {
+    const current = window.scrollY;
+    const header = document.getElementById("header");
+    const footer = document.getElementById("footer");
+    if(current > lastScroll){
+        header.classList.add("hide");
+        footer.classList.add("hide");
+    } else {
+        header.classList.remove("hide");
+        footer.classList.remove("hide");
+    }
+    lastScroll = current;
+});
+
+// Menu toggle
+function toggleMenu(){
+    const menu = document.getElementById("menu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+}
+
+// Collection items
+const items = [
+    {name:"Leather Bag",category:"bags",img:"1.jpg"},
+    {name:"Skirt Red",category:"skirts",img:"https://via.placeholder.com/220x200?text=Skirt+1"},
+    {name:"Jeans Pants",category:"pants",img:"https://via.placeholder.com/220x200?text=Pants+1"},
+    {name:"Shirt White",category:"shirts",img:"https://via.placeholder.com/220x200?text=Shirt+1"},
+    {name:"Jacket Blue",category:"jackets",img:"https://via.placeholder.com/220x200?text=Jacket+1"},
+    {name:"Sneakers",category:"shoes",img:"https://via.placeholder.com/220x200?text=Shoes+1"},
+    {name:"Cap Black",category:"hats",img:"https://via.placeholder.com/220x200?text=Hat+1"},
+    {name:"Summer Dress",category:"dresses",img:"https://via.placeholder.com/220x200?text=Dress+1"},
+    {name:"Crossbody Bag",category:"bags",img:"https://via.placeholder.com/220x200?text=Bag+2"},
+    {name:"Skirt Green",category:"skirts",img:"https://via.placeholder.com/220x200?text=Skirt+2"},
+    {name:"Pants Black",category:"pants",img:"https://via.placeholder.com/220x200?text=Pants+2"},
+    {name:"Shirt Blue",category:"shirts",img:"https://via.placeholder.com/220x200?text=Shirt+2"},
+];
+
+// Load shop items
+const shopContainer = document.getElementById("shopContainer");
+
+function loadItems(category="all"){
+    shopContainer.innerHTML="";
+    const filtered = category==="all" ? items : items.filter(i=>i.category===category);
+    filtered.forEach(i=>{
+        const card = document.createElement("div");
+        card.className="card";
+        card.innerHTML=`<img src="${i.img}" alt="${i.name}"><h3>${i.name}</h3><button>Add to Cart</button>`;
+        shopContainer.appendChild(card);
+    });
+}
+loadItems();
+
+// Tab buttons
+const tabs = document.querySelectorAll(".tab-btn");
+tabs.forEach(tab=>{
+    tab.addEventListener("click",()=>{
+        tabs.forEach(t=>t.classList.remove("active"));
+        tab.classList.add("active");
+        loadItems(tab.dataset.category);
+    });
+});
+</script>
+
+</body>
+</html>

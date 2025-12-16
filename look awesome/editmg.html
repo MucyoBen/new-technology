@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        *{
+            background-color: black;
+      }
+
+
+h1 {
+    margin-bottom: 30px;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
+    font-size: 36px;
+}
+
+        
+.choose{
+    color: aliceblue;
+    width: 80%;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px chocolate solid;
+}
+
+
+label{
+    color: aliceblue;
+    font-size: 30px;
+}
+
+
+.money{
+    width: 50%;
+    height: 30px;
+    border: 2px green solid;
+    border-radius: 8px;
+    color: gold;
+    font-size: 20px;
+}
+
+
+.like{
+    width: 50%;
+    height: 30px;
+    border: 2px green solid;
+    border-radius: 8px;
+    color: chocolate;
+    font-size: 20px;
+}
+
+
+#btn1{
+    color: chartreuse;
+    width: 40%;
+    height: 37px;
+    font-size: 20px;
+    border: 2px greenyellow solid;
+    border-radius: 10px;
+}
+
+
+#btn2{
+    color: brown;
+    width: 40%;
+    height: 37px;
+    font-size: 20px;
+    border: 2px red solid;
+    border-radius: 10px;
+    margin-right: 8%;
+
+}
+
+
+form{
+    padding-left: 4%;
+}
+
+
+input{
+    padding-left: 2%;
+}
+
+
+    </style>
+</head>
+<body>
+    <form>
+    <h1>Edit Image</h1>
+    <input readonly disabled id="" value="choose file name" class="choose"><br><br><br>
+
+    <label>money:</label><input type="text" class="money"><br><br>
+    <label>Like:</label><input type="number" class="like"><br><br>
+
+    <input readonly disabled id="" value="choose first image" class="choose"><br><br>
+    <input readonly disabled id="" value="choose second image" class="choose"><br><br>
+    <input readonly disabled id="" value="choose thirdth image" class="choose"><br><br>
+    <input readonly disabled id="" value="choose fourth image" class="choose"><br><br><br>
+
+    <button type="reset" id="btn2">Cancel</button>
+    <button type="submit" id="btn1">Save</button>
+</form>
+
+
+</body>
+</html>
