@@ -73,9 +73,7 @@ h2{
     border-radius:12px;
     display:none;
 }
-.images img.active{
-    display:block;
-}
+.images img.active{display:block;}
 
 /* SLIDER BUTTONS */
 .img-btn{
@@ -93,7 +91,11 @@ h2{
 .prev{left:10px;}
 .next{right:10px;}
 
-.frw{color:chocolate;font-size:20px;}
+.frw{
+    color:chocolate;
+    font-size:22px;
+    font-weight:bold;
+}
 
 .like-btn{
     background:none;
@@ -151,16 +153,16 @@ footer a{color:white;text-decoration:none;}
 <div class="content">
 <h2>POSTS</h2>
 
-<!-- POST WITH MULTIPLE IMAGES -->
+<!-- POST WITH MULTIPLE IMAGES & PRICES -->
 <div class="p1" data-id="1">
 
     <div class="images">
-        <img src="g1.jpg" class="active">
-        <img src="d14.jpg">
-        <img src="d11.jpg">
-        <img src="p1.jpg">
-        <img src="t1.jpg">
-        <img src="b3.jpg">
+        <img src="g1.jpg" class="active" data-price="10000">
+        <img src="d14.jpg" data-price="15000">
+        <img src="d11.jpg" data-price="12000">
+        <img src="p1.jpg" data-price="18000">
+        <img src="t1.jpg" data-price="20000">
+        <img src="b3.jpg" data-price="25000">
 
         <button class="img-btn prev">⬅️</button>
         <button class="img-btn next">➡️</button>
@@ -189,24 +191,30 @@ function toggleMenu(){
     menu.style.display=menu.style.display==="flex"?"none":"flex";
 }
 
-/* IMAGE SLIDER LOGIC */
+/* IMAGE SLIDER + PRICE */
 document.querySelectorAll(".images").forEach(gallery=>{
-    let index=0;
-    const imgs=gallery.querySelectorAll("img");
-    const prev=gallery.querySelector(".prev");
-    const next=gallery.querySelector(".next");
+    let index = 0;
+    const imgs = gallery.querySelectorAll("img");
+    const prev = gallery.querySelector(".prev");
+    const next = gallery.querySelector(".next");
+
+    const priceText = gallery.parentElement.querySelector(".frw");
 
     function show(i){
         imgs.forEach(img=>img.classList.remove("active"));
         imgs[i].classList.add("active");
+
+        const price = imgs[i].dataset.price;
+        priceText.innerText = Number(price).toLocaleString() + " FRW";
     }
 
-    prev.onclick=()=>{
-        index=(index-1+imgs.length)%imgs.length;
+    prev.onclick = ()=>{
+        index = (index - 1 + imgs.length) % imgs.length;
         show(index);
     };
-    next.onclick=()=>{
-        index=(index+1)%imgs.length;
+
+    next.onclick = ()=>{
+        index = (index + 1) % imgs.length;
         show(index);
     };
 });
@@ -214,5 +222,3 @@ document.querySelectorAll(".images").forEach(gallery=>{
 
 </body>
 </html>
-
-
