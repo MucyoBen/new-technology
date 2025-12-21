@@ -20,21 +20,7 @@ header{
     top:0;left:0;
     z-index:1000;
 }
-header.hide{transform:translateY(-100%);opacity:0;}
 .title{color:cyan;font-size:28px;font-weight:bold;}
-
-.menu-btn{font-size:35px;cursor:pointer;}
-.menu{
-    position:fixed;
-    top:70px;
-    right:20px;
-    background:#111;
-    display:none;
-    flex-direction:column;
-    border-radius:10px;
-}
-.menu a{color:white;padding:12px 20px;text-decoration:none;}
-.menu a:hover{background:rgba(0,255,255,0.2);}
 
 .content{
     padding-top:100px;
@@ -60,43 +46,24 @@ h2{
     border-radius:15px;
     display:flex;
     flex-direction:column;
-    gap:10px;
+    gap:25px;
 }
 
-/* IMAGE SLIDER */
-.images{
-    position:relative;
-    width:100%;
-}
-.images img{
+/* IMAGE ITEM */
+.image-item img{
     width:100%;
     border-radius:12px;
-    display:none;
 }
-.images img.active{display:block;}
 
-/* SLIDER BUTTONS */
-.img-btn{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:rgba(0,0,0,0.6);
-    color:white;
-    border:none;
-    font-size:25px;
-    padding:5px 12px;
-    cursor:pointer;
-    border-radius:50%;
-}
-.prev{left:10px;}
-.next{right:10px;}
-
+/* PRICE */
 .frw{
+    margin-top:8px;
     color:chocolate;
     font-size:22px;
     font-weight:bold;
 }
 
+/* BUTTONS */
 .like-btn{
     background:none;
     border:none;
@@ -104,7 +71,6 @@ h2{
     font-size:25px;
     cursor:pointer;
 }
-.like-btn.liked{color:red;}
 
 .pay-btn{
     padding:12px;
@@ -133,92 +99,70 @@ footer{
     justify-content:space-around;
     padding:15px;
 }
-footer.hide{transform:translateY(100%);}
 footer a{color:white;text-decoration:none;}
 </style>
 </head>
 
 <body>
 
-<header id="header">
+<header>
     <div class="title">Look Awesome 💖</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </header>
-
-<div class="menu" id="menu">
-    <a href="#">Home</a>
-    <a href="#">Post</a>
-</div>
 
 <div class="content">
 <h2>POSTS</h2>
 
-<!-- POST WITH MULTIPLE IMAGES & PRICES -->
-<div class="p1" data-id="1">
+<div class="p1">
 
-    <div class="images">
-        <img src="g1.jpg" class="active" data-price="10000">
-        <img src="d14.jpg" data-price="15000">
-        <img src="d11.jpg" data-price="12000">
-        <img src="p1.jpg" data-price="18000">
-        <img src="t1.jpg" data-price="20000">
-        <img src="b3.jpg" data-price="25000">
-
-        <button class="img-btn prev">⬅️</button>
-        <button class="img-btn next">➡️</button>
+    <!-- IMAGE 1 -->
+    <div class="image-item">
+        <img src="g1.jpg">
+        <p class="frw">10,000 FRW</p>
     </div>
 
-    <p class="frw">10,000 FRW</p>
+    <!-- IMAGE 2 -->
+    <div class="image-item">
+        <img src="d14.jpg">
+        <p class="frw">15,000 FRW</p>
+    </div>
 
-    <button class="like-btn">❤️ <span>563</span></button>
+    <!-- IMAGE 3 -->
+    <div class="image-item">
+        <img src="d11.jpg">
+        <p class="frw">12,000 FRW</p>
+    </div>
 
+    <!-- IMAGE 4 -->
+    <div class="image-item">
+        <img src="p1.jpg">
+        <p class="frw">18,000 FRW</p>
+    </div>
+
+    <!-- IMAGE 5 -->
+    <div class="image-item">
+        <img src="t1.jpg">
+        <p class="frw">20,000 FRW</p>
+    </div>
+
+    <!-- IMAGE 6 -->
+    <div class="image-item">
+        <img src="b3.jpg">
+        <p class="frw">25,000 FRW</p>
+    </div>
+
+    <button class="like-btn">❤️ 563</button>
     <button class="pay-btn">Call us</button>
     <a href="https://wa.me/250726431758" class="whatsapp-btn">💬 WhatsApp</a>
-</div>
 
 </div>
+</div>
 
-<footer id="footer">
+<footer>
     <a href="#">Home</a>
     <a href="#">Find</a>
     <a href="#">Share</a>
     <a href="#">Setting</a>
 </footer>
-
-<script>
-function toggleMenu(){
-    const menu=document.getElementById("menu");
-    menu.style.display=menu.style.display==="flex"?"none":"flex";
-}
-
-/* IMAGE SLIDER + PRICE */
-document.querySelectorAll(".images").forEach(gallery=>{
-    let index = 0;
-    const imgs = gallery.querySelectorAll("img");
-    const prev = gallery.querySelector(".prev");
-    const next = gallery.querySelector(".next");
-
-    const priceText = gallery.parentElement.querySelector(".frw");
-
-    function show(i){
-        imgs.forEach(img=>img.classList.remove("active"));
-        imgs[i].classList.add("active");
-
-        const price = imgs[i].dataset.price;
-        priceText.innerText = Number(price).toLocaleString() + " FRW";
-    }
-
-    prev.onclick = ()=>{
-        index = (index - 1 + imgs.length) % imgs.length;
-        show(index);
-    };
-
-    next.onclick = ()=>{
-        index = (index + 1) % imgs.length;
-        show(index);
-    };
-});
-</script>
 
 </body>
 </html>
