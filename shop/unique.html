@@ -34,6 +34,22 @@ h2{font-size:36px;font-weight:bold;text-align:center;background: linear-gradient
 .pay-btn:hover{transform:scale(1.1);box-shadow:0 8px 25px rgba(0,255,255,0.5);}
 .whatsapp-btn{padding:12px 25px;background: linear-gradient(135deg, #25D366, #128C7E);color:white;font-weight:bold;font-size:18px;border:none;border-radius:50px;cursor:pointer;text-align:center;margin-top:10px;text-decoration:none;display:inline-block;transition:0.3s ease;}
 .whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 8px 25px rgba(37,211,102,0.5);background: linear-gradient(135deg, #128C7E, #25D366);}
+#container{
+    width: 96%;
+    height: 80%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 2%;
+    border-radius: 10px;
+    border: green 1px solid ;
+    animation: container 2s infinite ease-in-out;
+}@keyframes container{
+    0%{border: green 1px solid;}
+    25%{border: greenyellow 1px solid;}
+    50%{border:brown 1px solid;}
+    70%{border: chartreuse 1px solid;}
+    100%{border: chocolate 1px solid;}
+}
 </style>
 </head>
 <body>
@@ -52,8 +68,29 @@ h2{font-size:36px;font-weight:bold;text-align:center;background: linear-gradient
 </div>
 
 <div class="content">
-<h2>POSTS</h2>
-<div id="postsContainer"></div>
+<h2>UNIQUE</h2>
+<div id="container">
+    <img src="1.JPG">
+<p class="frw">10,000FRW</p>
+<div class="like-box">
+    <button class="like-btn">❤️ <span class="like-count">0</span></button>
+</div>
+<a href="tel:0798388931"><button class="pay-btn">Call us</button></a>
+<a href="https://wa.me/250726431758?text=Hello" target="_blank" class="whatsapp-btn">💬 Open WhatsApp</a>
+</div>
+
+<br>
+
+<div id="container">
+    <img src="p3.jpg">
+<p class="frw">10,000FRW</p>
+<div class="like-box">
+    <button class="like-btn">❤️ <span class="like-count">0</span></button>
+</div>
+<a href="tel:0798388931"><button class="pay-btn">Call us</button></a>
+<a href="https://wa.me/250726431758?text=Hello" target="_blank" class="whatsapp-btn">💬 Open WhatsApp</a>
+
+</div>
 </div>
 
 <footer id="footer">
