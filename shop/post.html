@@ -11,7 +11,29 @@ body{background:black;color:white;}
 header{width:100%;padding:15px 25px;background:#222;display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.1);box-shadow:0 4px 20px rgba(0,255,255,0.2);transition:0.4s ease;}
 header.hide{transform:translateY(-100%);opacity:0;}
 header .title{font-size:28px;font-weight:bold;color:cyan;text-shadow:0 0 8px cyan;}
-  h2{font-weight:bold;color:cyan;text-shadow:0 0 8px cyan;}
+h2 {
+  font-size: 48px; /* make it bigger */
+  font-weight: 900; /* extra bold */
+  color: cyan;
+  text-align: center;
+  text-shadow: 
+    0 0 5px cyan,
+    0 0 10px cyan,
+    0 0 20px magenta,
+    0 0 30px cyan,
+    0 0 40px magenta;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  animation: neon-flicker 2s infinite alternate;
+}
+
+/* Neon flicker animation */
+@keyframes neon-flicker {
+  0% { text-shadow: 0 0 5px cyan, 0 0 10px cyan, 0 0 20px magenta, 0 0 30px cyan, 0 0 40px magenta; }
+  50% { text-shadow: 0 0 2px cyan, 0 0 5px cyan, 0 0 10px magenta, 0 0 15px cyan, 0 0 20px magenta; }
+  100% { text-shadow: 0 0 8px cyan, 0 0 15px cyan, 0 0 25px magenta, 0 0 35px cyan, 0 0 50px magenta; }
+}
+
 .menu-btn{font-size:35px;cursor:pointer;color:white;}
 .menu{position:fixed;top:70px;right:20px;width:180px;background:#111;border-radius:10px;display:none;flex-direction:column;}
 .menu a{padding:12px 20px;color:white;text-decoration:none;}
@@ -140,6 +162,7 @@ posts.forEach(post=>{
     
 </body>
 </html>
+
 
 
 
