@@ -116,7 +116,26 @@ posts.forEach(post=>{
     localStorage.setItem("likes",JSON.stringify(likes));
   };
 });
-</script>
 
+
+    /* ❤️ Auto-increment likes every 20 minutes by 5 */
+    setInterval(() => {
+      posts.forEach(post => {
+        const id = post.dataset.id;
+        const count = post.querySelector(".like-count");
+    
+        if (!likes[id]) {
+          likes[id] = { count: parseInt(count.textContent), liked: false };
+        }
+    
+        likes[id].count += 5;  // add 5 likes
+        count.textContent = likes[id].count;
+    
+        // Save updated likes to localStorage
+        localStorage.setItem("likes", JSON.stringify(likes));
+      });
+    }, 20 * 60 * 1000); // 20 minutes in milliseconds
+    </script>
+    
 </body>
 </html>
