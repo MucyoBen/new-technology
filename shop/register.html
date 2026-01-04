@@ -108,9 +108,12 @@ input:focus{
         <input type="text" id="in1" required placeholder="write your name...">
         <label for="in2">Password</label>
         <input type="password" id="in2" required placeholder="write your password...">
-        <p id="message"></p><br>
-        <button type="submit" class="enter">Enter</button><br>
-        <a href="register.html" style="color: green; font-size: 20px; text-decoration: none; text-align: end;">create account</a>
+        
+        <label for="in2">conf_Password</label>
+        <input type="password" id="in2" required placeholder="re-write password...">
+        
+        <button type="submit" class="enter">Create</button><br>
+        
     </form>
 </div>
 
@@ -152,11 +155,9 @@ form.addEventListener("submit", function(event){
     const message = document.getElementById("message");
 
     if(username =="" && password ==""){
-        alert("fill username and password.")
+        alert("fill username and password.");
     } else {
-        message.textContent = "Please create account.";
-        message.style.fontSize="18px";
-        message.style.color = "tomato";
+        window.location.href="login.html";
     }
 });
 
