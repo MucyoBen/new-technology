@@ -4,141 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Posts</title>
+
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
 body{background:black;color:white;}
 header{width:100%;padding:15px 25px;background:#222;display:flex;justify-content:space-between;align-items:center;position:fixed;top:0;left:0;z-index:1000;border-bottom:1px solid rgba(255,255,255,0.1);box-shadow:0 4px 20px rgba(0,255,255,0.2);transition:0.4s ease;}
 header.hide{transform:translateY(-100%);opacity:0;}
 header .title{font-size:28px;font-weight:bold;color:cyan;text-shadow:0 0 8px cyan;}
-.menu-btn{font-size:35px;cursor:pointer;color:white;transition:0.3s;}
-.menu-btn:hover{color:cyan;text-shadow:0 0 8px cyan;}
-.menu{position:fixed;top:70px;right:20px;width:180px;background:#111;border-radius:10px;display:none;flex-direction:column;padding:15px 0;box-shadow:0 0 20px rgba(0,255,255,0.3);border:1px solid rgba(255,255,255,0.2);}
-.menu a{padding:12px 20px;color:white;text-decoration:none;transition:0.25s;}
-.menu a:hover{background:rgba(0,255,255,0.2);color:cyan;text-shadow:0 0 8px cyan;}
+.menu-btn{font-size:35px;cursor:pointer;color:white;}
+.menu{position:fixed;top:70px;right:20px;width:180px;background:#111;border-radius:10px;display:none;flex-direction:column;}
+.menu a{padding:12px 20px;color:white;text-decoration:none;}
+
 footer{position:fixed;bottom:0;left:0;width:100%;padding:15px 0;background:#111;display:flex;justify-content:space-around;align-items:center;backdrop-filter:blur(6px);border-top:1px solid rgba(255,255,255,0.1);box-shadow:0 -4px 25px rgba(0,255,255,0.2);transition:0.4s ease;}
 footer.hide{transform:translateY(100%);opacity:0;}
 footer a{color:#fff;text-decoration:none;font-size:18px;font-weight:600;display:flex;flex-direction:column;align-items:center;gap:5px;transition:0.3s ease;padding:8px 12px;border-radius:10px;}
 footer a:hover{color:cyan;text-shadow:0 0 8px cyan;transform:translateY(-5px) scale(1.1);background:rgba(0,255,255,0.1);}
 footer a span{font-size:14px;opacity:0.8;}
-.content{padding-top:100px;padding-bottom:70px;padding-left:20px;text-align:start;font-size:30px;}
+
+.content{padding-top:100px;padding-bottom:70px;padding-left:20px;font-size:30px;}
 img{width:90%;height:90%;border-radius:10%;}
 .p1{padding:20px;margin-bottom:20px;width:90%;border:2px green solid;border-radius:5%;animation:p1 6s ease-in-out infinite;display:flex;flex-direction:column;gap:10px;}
-@keyframes p1{0%{border:2px green solid;}20%{border:2px greenyellow solid;}40%{border:2px brown solid;}60%{border:2px goldenrod solid;}80%{border:blueviolet solid;}90%{border:2px rgb(5,75,5) solid;}}
+@keyframes p1{0%{border:2px green solid;}50%{border:2px goldenrod solid;}100%{border:2px blueviolet solid;}}
 .frw{color:chocolate;}
-.like-box{display:flex;align-items:center;gap:10px;margin-top:10px;}
-.like-btn{font-size:25px;cursor:pointer;background:none;border:none;color:white;display:flex;align-items:center;gap:10px;transition:0.2s;}
-.like-btn.liked{color:red;text-shadow:0 0 10px red;transform:scale(1.2);}
-h2{font-size:36px;font-weight:bold;text-align:center;background: linear-gradient(90deg, cyan, magenta, yellow, cyan);-webkit-background-clip: text;-webkit-text-fill-color: transparent;text-shadow:0 0 10px cyan,0 0 20px magenta;margin-bottom:30px;padding:10px;animation: glow 2s ease-in-out infinite alternate;}
-@keyframes glow{0%{text-shadow:0 0 5px cyan,0 0 10px magenta;}50%{text-shadow:0 0 15px cyan,0 0 30px magenta;}100%{text-shadow:0 0 5px cyan,0 0 10px magenta;}}
-.pay-btn{padding:12px 25px;background: linear-gradient(135deg, cyan, magenta);color:white;font-weight:bold;font-size:18px;border:none;border-radius:50px;cursor:pointer;text-align:center;margin-top:10px;transition:0.3s ease;}
-.pay-btn:hover{transform:scale(1.1);box-shadow:0 8px 25px rgba(0,255,255,0.5);}
-.whatsapp-btn{padding:12px 25px;background: linear-gradient(135deg, #25D366, #128C7E);color:white;font-weight:bold;font-size:18px;border:none;border-radius:50px;cursor:pointer;text-align:center;margin-top:10px;text-decoration:none;display:inline-block;transition:0.3s ease;}
-.whatsapp-btn:hover{transform:scale(1.1);box-shadow:0 8px 25px rgba(37,211,102,0.5);background: linear-gradient(135deg, #128C7E, #25D366);}
+.like-box{display:flex;align-items:center;gap:10px;}
+.like-btn{font-size:25px;background:none;border:none;color:white;cursor:pointer;}
+.like-btn.liked{color:red;text-shadow:0 0 10px red;}
+.pay-btn{padding:12px 25px;background:linear-gradient(135deg,cyan,magenta);border:none;border-radius:50px;color:white;}
+.whatsapp-btn{padding:12px 25px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50px;color:white;text-decoration:none;}
 </style>
 </head>
+
 <body>
 
 <header id="header">
-    <div class="title">Look Awesome 💖</div>
-    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+  <div class="title">Look Awesome 💖</div>
+  <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </header>
 
 <div class="menu" id="menu">
-    <a href="class.html">class</a>
-    <a href="login.html">Login</a>
-    <a href="post.html">New Post</a>
-    <a href="about.html">About Us</a>
-    <a href="help.html">❓ Help</a>
+  <a href="#">Home</a>
 </div>
 
 <div class="content">
-<h2>POSTS</h2>
-<div id="postsContainer"></div>
+<h2 style="text-align:center;">POSTS</h2>
+
+<div class="p1" data-id="1">
+  <img src="a76.jpg">
+  <p class="frw">10,000 FRW</p>
+  <div class="like-box">
+    <button class="like-btn">❤️ <span class="like-count">620</span></button>
+  </div>
+  <a href="tel:0784779391"><button class="pay-btn">Call us</button></a>
+  <a href="https://wa.me/250781035941" class="whatsapp-btn">💬 WhatsApp</a>
 </div>
 
+<div class="p1" data-id="2">
+  <img src="a70.jpg">
+  <p class="frw">15,000 FRW</p>
+  <div class="like-box">
+    <button class="like-btn">❤️ <span class="like-count">487</span></button>
+  </div>
+  <a href="tel:0784779391"><button class="pay-btn">Call us</button></a>
+  <a href="https://wa.me/250781035941" class="whatsapp-btn">💬 WhatsApp</a>
+</div>
+
+<div class="p1" data-id="3">
+  <img src="a84.jpg">
+  <p class="frw">20,000 FRW</p>
+  <div class="like-box">
+    <button class="like-btn">❤️ <span class="like-count">703</span></button>
+  </div>
+  <a href="tel:0784779391"><button class="pay-btn">Call us</button></a>
+  <a href="https://wa.me/250781035941" class="whatsapp-btn">💬 WhatsApp</a>
+</div>
+</div>
+
+<!-- ✅ FULL FOOTER (NK’UKO WAYIMPAYE MBERE) -->
 <footer id="footer">
-    <a href="index.html" class="home">🏯 <span>Home</span></a>
-    <a href="find.html" class="find">🌏 <span>Find Us</span></a>
-    <a href="share.html" class="share">💬 <span>Share</span></a>
-    <a href="setting.html" class="setting">⚙ <span>Setting</span></a>
+  <a href="index.html" class="home">🏯 <span>Home</span></a>
+  <a href="find.html" class="find">🌏 <span>Find Us</span></a>
+  <a href="share.html" class="share">💬 <span>Share</span></a>
+  <a href="setting.html" class="setting">⚙ <span>Setting</span></a>
 </footer>
 
 <script>
-
-let lastScroll=0;
-window.addEventListener("scroll",()=>{
-    const current=window.scrollY;
-    const header=document.getElementById("header");
-    const footer=document.getElementById("footer");
-    if(current>lastScroll){header.classList.add("hide");footer.classList.add("hide");}
-    else{header.classList.remove("hide");footer.classList.remove("hide");}
-    lastScroll=current;
-});
-
 function toggleMenu(){
-    const menu=document.getElementById("menu");
-    menu.style.display=menu.style.display==="flex"?"none":"flex";
+  menu.style.display = menu.style.display==="flex"?"none":"flex";
 }
 
+/* ❤️ Likes */
+const posts=document.querySelectorAll(".p1");
+let likes=JSON.parse(localStorage.getItem("likes")||"{}");
 
-const postsContainer = document.getElementById("postsContainer");
-const initialLikes = [563, 831, 429, 1290, 424, 647];
+posts.forEach(post=>{
+  const id=post.dataset.id;
+  const btn=post.querySelector(".like-btn");
+  const count=post.querySelector(".like-count");
 
-function loadPosts(){
-    postsContainer.innerHTML="";
-    let posts = JSON.parse(localStorage.getItem("posts") || "[]");
-    if(posts.length===0){
-        postsContainer.innerHTML="<p style='color:cyan;text-align:center;margin-top:50px;'>No posts available. Upload from Manager.</p>";
-        return;
-    }
+  if(!likes[id]){
+    likes[id]={count:parseInt(count.textContent),liked:false};
+  }
 
-    let likedPosts = JSON.parse(localStorage.getItem("likedPosts") || "{}");
+  count.textContent=likes[id].count;
+  if(likes[id].liked) btn.classList.add("liked");
 
-    posts.forEach((post,index)=>{
-        const div = document.createElement("div");
-        div.className="p1";
-        div.setAttribute("data-id",post.id);
-        div.innerHTML=`
-            <img src="${post.image}">
-            <p class="frw">10,000FRW</p>
-            <div class="like-box">
-                <button class="like-btn">❤️ <span class="like-count">0</span></button>
-            </div>
-            <a href="tel:0798388931"><button class="pay-btn">Call us</button></a>
-            <a href="https://wa.me/250726431758?text=Hello" target="_blank" class="whatsapp-btn">💬 Open WhatsApp</a>
-        `;
-        postsContainer.appendChild(div);
-
-        const likeBtn = div.querySelector(".like-btn");
-        const likeCountSpan = div.querySelector(".like-count");
-
-        if(!likedPosts[post.id]){
-            likedPosts[post.id]={count: initialLikes[index]||0, liked:false};
-        }
-
-        likeCountSpan.innerText = likedPosts[post.id].count;
-        if(likedPosts[post.id].liked) likeBtn.classList.add("liked");
-
-        likeBtn.addEventListener("click",()=>{
-            if(!likedPosts[post.id].liked){
-                likedPosts[post.id].count++;
-                likedPosts[post.id].liked=true;
-                likeBtn.classList.add("liked");
-            } else {
-                likedPosts[post.id].count--;
-                likedPosts[post.id].liked=false;
-                likeBtn.classList.remove("liked");
-            }
-            likeCountSpan.innerText = likedPosts[post.id].count;
-            localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
-        });
-    });
-
-    localStorage.setItem("likedPosts", JSON.stringify(likedPosts));
-}
-
-
-loadPosts();
+  btn.onclick=()=>{
+    likes[id].liked=!likes[id].liked;
+    likes[id].count+=likes[id].liked?1:-1;
+    btn.classList.toggle("liked");
+    count.textContent=likes[id].count;
+    localStorage.setItem("likes",JSON.stringify(likes));
+  };
+});
 </script>
 
 </body>
