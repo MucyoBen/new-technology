@@ -158,10 +158,42 @@ posts.forEach(post=>{
         localStorage.setItem("likes", JSON.stringify(likes));
       });
     }, 5 * 60 * 1000); // 20 minutes in milliseconds
+
+  
     </script>
+
+      
+    <script>
+        let lastScroll = 0;
+
+        window.addEventListener("scroll", () => {
+            const current = window.scrollY;
+            const header = document.getElementById("header");
+            const footer = document.getElementById("footer");
+
+            if (current > lastScroll) {
+        
+                header.classList.add("hide");
+                footer.classList.add("hide");
+            } else {
+            
+                header.classList.remove("hide");
+                footer.classList.remove("hide");
+            }
+
+            lastScroll = current;
+        });
+
+        function toggleMenu(){
+            const menu = document.getElementById("menu");
+            menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+        }
+    </script>
+
     
 </body>
 </html>
+
 
 
 
