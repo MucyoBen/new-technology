@@ -18,7 +18,6 @@
             color: white;
         }
 
-
         header{
             width: 100%;
             padding: 15px 25px;
@@ -59,7 +58,6 @@
             text-shadow: 0 0 8px cyan;
         }
 
-    
         .menu{
             position: fixed;
             top: 70px;
@@ -93,9 +91,6 @@
             to{opacity: 1; transform: translateY(0);}
         }
 
-
-
-    
         footer{
             position: fixed;
             bottom: 0;
@@ -142,7 +137,6 @@
             font-size: 14px;
             opacity: 0.8;
         }
-
         
         .content {
             padding-top: 100px;
@@ -151,76 +145,110 @@
             font-size: 30px;
         }
         
-.image-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 15px;
-    padding: 20px;
-}
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 15px;
+            padding: 20px;
+        }
 
-.image-grid img {
-    width: 100%;
-    height: auto;            
-    border-radius: 12px;     
-    object-fit: cover;
-    transition: 0.3s ease;
-}
+        .image-grid img {
+            width: 100%;
+            height: auto;            
+            border-radius: 12px;     
+            object-fit: cover;
+            transition: 0.3s ease;
+        }
 
-.image-grid img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px cyan;
-}
+        .image-grid img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px cyan;
+        }
 
+        /* Loading spinner for infinite scroll */
+        .loading {
+            text-align: center;
+            padding: 20px;
+            display: none;
+        }
 
-@media (max-width: 480px) {
-    .image-grid {
-        gap: 10px;
-    }
-}
-.titl{
-    color: chartreuse;
-    animation: titl 6s linear infinite;
-}@keyframes titl{
-    0%{color: chartreuse;}
-    20%{color: chocolate;}
-    40%{color: green;}
-    60%{color: greenyellow;}
-}
-.year{
-    color: chartreuse;
-    animation: year 6s linear infinite;
-}@keyframes year{
-    0%{color: wheat;}
-    20%{color: chocolate;}
-    40%{color: brown;}
-    60%{color: green;}
-}
-h4{
-    animation: h4 6s linear infinite;
-}@keyframes h4{
-    0%{color: wheat;}
-    20%{color: chocolate;}
-    40%{color: brown;}
-    60%{color: green;}
-    80%{color: rgb(153, 228, 110);}
-    100%{color: rgb(141, 223, 195);}
-}
-img{
-    border: 1px greenyellow solid;
-    border-radius: 10px;
-}
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(0, 255, 255, 0.3);
+            border-top: 4px solid cyan;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .no-more {
+            text-align: center;
+            padding: 20px;
+            color: cyan;
+            display: none;
+        }
+
+        @media (max-width: 480px) {
+            .image-grid {
+                gap: 10px;
+            }
+        }
+        
+        .titl{
+            color: chartreuse;
+            animation: titl 6s linear infinite;
+        }
+        
+        @keyframes titl{
+            0%{color: chartreuse;}
+            20%{color: chocolate;}
+            40%{color: green;}
+            60%{color: greenyellow;}
+        }
+        
+        .year{
+            color: chartreuse;
+            animation: year 6s linear infinite;
+        }
+        
+        @keyframes year{
+            0%{color: wheat;}
+            20%{color: chocolate;}
+            40%{color: brown;}
+            60%{color: green;}
+        }
+        
+        h4{
+            animation: h4 6s linear infinite;
+        }
+        
+        @keyframes h4{
+            0%{color: wheat;}
+            20%{color: chocolate;}
+            40%{color: brown;}
+            60%{color: green;}
+            80%{color: rgb(153, 228, 110);}
+            100%{color: rgb(141, 223, 195);}
+        }
+        
+        img{
+            border: 1px greenyellow solid;
+            border-radius: 10px;
+        }
     </style>
-
 </head>
 <body>
-
-    
     <header id="header">
         <div class="title">Look Awesome 💖</div>
         <div class="menu-btn" onclick="toggleMenu()">☰</div>
     </header>
 
-    
     <div class="menu" id="menu">
         <a href="class.html">class</a>
         <a href="login.html">login</a>
@@ -229,122 +257,26 @@ img{
         <a href="help.html">❓ Help</a>
     </div>
 
-    
-    <div class="content"> <h4 style="color: chartreuse;"><i>WELCOME TO SHOP</i></h4>
+    <div class="content">
+        <h4 style="color: chartreuse;"><i>WELCOME TO SHOP</i></h4>
 
-        <div class="image-grid">
-            <a href="f1.html"><img src="IMG_20251212_141525_359.jpg" alt=""></a>
-            <a href="f2.html"><img src="IMG_20251212_160304_210.jpg" alt=""></a>
-            <a href="f3.html"><img src="b3.jpg" alt=""></a>
-            <a href="f4.html"><img src="IMG_20251212_143209_928.jpg" alt=""></a>
-            <a href="f5.html"><img src="IMG_20251212_154353_457.jpg" alt=""></a>
-            <a href="f6.html"><img src="b1.jpg" alt=""></a>
-            <a href="f7.html"><img src="d4.jpg" alt=""></a>
-            <a href="f8.html"><img src="p4.jpg" alt=""></a>
-            <a href="f9.html"><img src="t1.jpg" alt=""></a>
-            <a href="f10.html"><img src="g1.jpg" alt=""></a>
-            <a href="f11.html"><img src="d1.jpg" alt=""></a>
-            <a href="f12.html"><img src="d13.jpg" alt=""></a>
-            <a href="f13.html"><img src="e5.jpg" alt=""></a>
-            <a href="f14.html"><img src="e1.jpg" alt=""></a>
-            <a href="f15.html"><img src="e2.jpg" alt=""></a>
-            <a href="f16.html"><img src="e5.jpg" alt=""></a>
-            <a href="f17.html"><img src="e7.jpg" alt=""></a>
-            <a href="f18.html"><img src="e1.jpg" alt=""></a>
-            <a href="f19.html"><img src="e14.jpg" alt=""></a>
-            <a href="f20.html"><img src="e17.jpg" alt=""></a>
-            <a href="f21.html"><img src="e2.jpg" alt=""></a>
-            <a href="f22.html"><img src="e26.jpg" alt=""></a>
-            <a href="f23.html"><img src="e28.jpg" alt=""></a>
-            <a href="f24.html"><img src="e32.jpg" alt=""></a>
-            <a href="f25.html"><img src="e35.jpg" alt=""></a>
-            <a href="f26.html"><img src="e39.jpg" alt=""></a>
-            <a href="f27.html"><img src="e50.jpg" alt=""></a>
-            <a href="f28.html"><img src="e55.jpg" alt=""></a>
-            <a href="f29.html"><img src="e59.jpg" alt=""></a>
-            <a href="f30.html"><img src="e67.jpg" alt=""></a>
-            <a href="f31.html"><img src="e68.jpg" alt=""></a>
-            <a href="f32.html"><img src="e73.jpg" alt=""></a>
-            <a href="f33.html"><img src="e76.jpg" alt=""></a>
-            <a href="f34.html"><img src="e83.jpg" alt=""></a>
-            <a href="f35.html"><img src="e85.jpg" alt=""></a>
-            <a href="f36.html"><img src="e88.jpg" alt=""></a>
-            <a href="f37.html"><img src="e9.jpg" alt=""></a> 
-            <a href="f38.html"><img src="e95.jpg" alt=""></a>
-            <a href="f39.html"><img src="e96.jpg" alt=""></a>
-            <a href="f40.html"><img src="e98.jpg" alt=""></a>
-            <a href="f41.html"><img src="g1.jpg" alt=""></a>
-            <a href="f42.html"><img src="a1.jpg" alt=""></a>
-            <a href="f43.html"><img src="a4.jpg" alt=""></a>
-            <a href="f44.html"><img src="a8.jpg" alt=""></a>
-            <a href="f45.html"><img src="a1.jpg" alt=""></a>
-            <a href="f46.html"><img src="a14.jpg" alt=""></a>
-            <a href="f47.html"><img src="a17.jpg" alt=""></a>
-            <a href="f48.html"><img src="a20.jpg" alt=""></a>
-            <a href="f49.html"><img src="a23.jpg" alt=""></a>
-            <a href="f50.html"><img src="a26.jpg" alt=""></a>
-            <a href="f51.html"><img src="a34.jpg" alt=""></a>
-            <a href="f52.html"><img src="a36.jpg" alt=""></a>
-            <a href="f53.html"><img src="a40.jpg" alt=""></a>
-            <a href="f54.html"><img src="a42.jpg" alt=""></a>
-            <a href="f55.html"><img src="a45.jpg" alt=""></a>
-            <a href="f56.html"><img src="a48.jpg" alt=""></a>
-            <a href="f57.html"><img src="a50.jpg" alt=""></a>
-            <a href="f58.html"><img src="a52.jpg" alt=""></a>
-            <a href="f59.html"><img src="a55.jpg" alt=""></a>
-            <a href="f60.html"><img src="a58.jpg" alt=""></a>
-            <a href="f61.html"><img src="a60.jpg" alt=""></a>
-            <a href="f62.html"><img src="a62.jpg" alt=""></a>
-            <a href="f63.html"><img src="a66.jpg" alt=""></a>
-            <a href="f64.html"><img src="a70.jpg" alt=""></a>
-            <a href="f65.html"><img src="a72.jpg" alt=""></a>
-            <a href="f66.html"><img src="a76.jpg" alt=""></a>
-            <a href="f67.html"><img src="a80.jpg" alt=""></a>
-            <a href="f68.html"><img src="a84.jpg" alt=""></a>
-            <a href="f69.html"><img src="a86.jpg" alt=""></a>
-            <a href="f70.html"><img src="a88.jpg" alt=""></a>
-            <a href="f71.html"><img src="a90.jpg" alt=""></a>
-            <a href="f72.html"><img src="a92.jpg" alt=""></a>
-            <a href="f73.html"><img src="a94.jpg" alt=""></a>
-            <a href="f74.html"><img src="a97.jpg" alt=""></a>
-            <a href="f75.html"><img src="z1.jpg" alt=""></a>
-            <a href="f76.html"><img src="z4.jpg "alt=""></a>
-            <a href="f77.html"><img src="z7.jpg" alt=""></a>
-            <a href="f78.html"><img src="z10.jpg" alt=""></a> 
-            <a href="f79.html"><img src="z13.jpg" alt=""></a>
-            <a href="f80.html"><img src="z15.jpg" alt=""></a>
-            <a href="f81.html"><img src="z19.jpg" alt=""></a>
-            <a href="f82.html"><img src="z25.jpg" alt=""></a>
-            <a href="f83.html"><img src="z80.jpg" alt=""></a>
-            <a href="f84.html"><img src="z32.jpg" alt=""></a>
-            <a href="f85.html"><img src="z35.jpg" alt=""></a>
-            <a href="f86.html"><img src="z39.jpg" alt=""></a> 
-            <a href="f87.html"><img src="z42.jpg" alt=""></a>
-            <a href="f88.html"><img src="z45.jpg" alt=""></a>
-            <a href="f89.html"><img src="z47.jpg" alt=""></a>
-            <a href="f90.html"><img src="z51.jpg" alt=""></a>
-            <a href="f91.html"><img src="z54.jpg" alt=""></a>
-            <a href="f92.html"><img src="z57.jpg" alt=""></a>
-            <a href="f93.html"><img src="z60.jpg" alt=""></a>
-            <a href="f94.html"><img src="z64.jpg" alt=""></a> 
-            <a href="f95.html"><img src="z66.jpg" alt=""></a>
-            <a href="f96.html"><img src="z68.jpg" alt=""></a>
-            <a href="f97.html"><img src="z71.jpg" alt=""></a>
-            <a href="f98.html"><img src="z74.jpg" alt=""></a> 
-            <a href="f99.html"><img src="z77.jpg" alt=""></a>
-            <a href="f100.html"><img src="z81.jpg" alt=""></a>
-            <a href="f101.html"><img src="g1.jpg" alt=""></a>
-            <a href="f102.html"><img src="g1.jpg" alt=""></a>
-            <a href="f103.html"><img src="g1.jpg" alt=""></a>
-            <a href="f104.html"><img src="g1.jpg" alt=""></a>
-            <a href="f105.html"><img src="g1.jpg" alt=""></a>
-            <a href="f106.html"><img src="g1.jpg" alt=""></a> 
+        <div class="image-grid" id="imageGrid">
+            <!-- Initial images will be loaded here by JavaScript -->
         </div>
-        <div class="titl">look Awesome in New year <b class="year">✨2026✨</b></div> 
+        
+        <!-- Loading indicator -->
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Loading more awesome content...</p>
+        </div>
+        
+        <!-- No more content indicator -->
+        <div class="no-more" id="noMore">
+            <p>✨ You've seen all our awesome content! ✨</p>
+        </div>
+        
+        <div class="titl">look Awesome in New year <b class="year">✨2026✨</b></div>
     </div>
-   
-    
-
 
     <footer id="footer">
         <a href="" class="home">🏯 <span>Home</span></a>
@@ -353,8 +285,240 @@ img{
         <a href="setting.html" class="setting">⚙ <span>Setting</span></a>
     </footer>
 
-    
     <script>
+        // Your existing images data - converted from your HTML
+        const allImages = [
+            { src: "IMG_20251212_141525_359.jpg", link: "f1.html" },
+            { src: "IMG_20251212_160304_210.jpg", link: "f2.html" },
+            { src: "b3.jpg", link: "f3.html" },
+            { src: "IMG_20251212_143209_928.jpg", link: "f4.html" },
+            { src: "IMG_20251212_154353_457.jpg", link: "f5.html" },
+            { src: "v14.jpg", link: "f149.html" },
+            { src: "v15.jpg", link: "f150.html" },
+            { src: "v16.jpg", link: "f151.html" },
+            { src: "v17.jpg", link: "f152.html" },
+            { src: "v18.jpg", link: "f153.html" },
+            { src: "v19.jpg", link: "f154.html" },
+            { src: "v20.jpg", link: "f155.html" },
+            { src: "v21.jpg", link: "f156.html" },
+            { src: "v22.jpg", link: "f157.html" },
+            { src: "v23.jpg", link: "f158.html" },
+            { src: "v24.jpg", link: "f159.html" },
+            { src: "v26.jpg", link: "f160.html" },
+            { src: "v27.jpg", link: "f161.html" },
+            { src: "b1.jpg", link: "f6.html" },
+            { src: "d4.jpg", link: "f7.html" },
+            { src: "p4.jpg", link: "f8.html" },
+            { src: "t1.jpg", link: "f9.html" },
+            { src: "g1.jpg", link: "f10.html" },
+            { src: "d1.jpg", link: "f11.html" },
+            { src: "d13.jpg", link: "f12.html" },
+            { src: "e5.jpg", link: "f13.html" },
+            { src: "e1.jpg", link: "f14.html" },
+            { src: "e2.jpg", link: "f15.html" },
+            { src: "e5.jpg", link: "f16.html" },
+            { src: "e7.jpg", link: "f17.html" },
+            { src: "e1.jpg", link: "f18.html" },
+            { src: "e14.jpg", link: "f19.html" },
+            { src: "e17.jpg", link: "f20.html" },
+            { src: "e2.jpg", link: "f21.html" },
+            { src: "e26.jpg", link: "f22.html" },
+            { src: "e28.jpg", link: "f23.html" },
+            { src: "e32.jpg", link: "f24.html" },
+            { src: "e35.jpg", link: "f25.html" },
+            { src: "e39.jpg", link: "f26.html" },
+            { src: "e50.jpg", link: "f27.html" },
+            { src: "e55.jpg", link: "f28.html" },
+            { src: "e59.jpg", link: "f29.html" },
+            { src: "e67.jpg", link: "f30.html" },
+            { src: "e68.jpg", link: "f31.html" },
+            { src: "e73.jpg", link: "f32.html" },
+            { src: "e76.jpg", link: "f33.html" },
+            { src: "e83.jpg", link: "f34.html" },
+            { src: "e85.jpg", link: "f35.html" },
+            { src: "e88.jpg", link: "f36.html" },
+            { src: "e9.jpg", link: "f37.html" },
+            { src: "e95.jpg", link: "f38.html" },
+            { src: "e96.jpg", link: "f39.html" },
+            { src: "e98.jpg", link: "f40.html" },
+            { src: "g1.jpg", link: "f41.html" },
+            { src: "a1.jpg", link: "f42.html" },
+            { src: "a4.jpg", link: "f43.html" },
+            { src: "a8.jpg", link: "f44.html" },
+            { src: "a1.jpg", link: "f45.html" },
+            { src: "a14.jpg", link: "f46.html" },
+            { src: "a17.jpg", link: "f47.html" },
+            { src: "a20.jpg", link: "f48.html" },
+            { src: "a23.jpg", link: "f49.html" },
+            { src: "a26.jpg", link: "f50.html" },
+            { src: "a34.jpg", link: "f51.html" },
+            { src: "a36.jpg", link: "f52.html" },
+            { src: "a40.jpg", link: "f53.html" },
+            { src: "a42.jpg", link: "f54.html" },
+            { src: "a45.jpg", link: "f55.html" },
+            { src: "a48.jpg", link: "f56.html" },
+            { src: "a50.jpg", link: "f57.html" },
+            { src: "a52.jpg", link: "f58.html" },
+            { src: "a55.jpg", link: "f59.html" },
+            { src: "a58.jpg", link: "f60.html" },
+            { src: "a60.jpg", link: "f61.html" },
+            { src: "a62.jpg", link: "f62.html" },
+            { src: "a66.jpg", link: "f63.html" },
+            { src: "a70.jpg", link: "f64.html" },
+            { src: "a72.jpg", link: "f65.html" },
+            { src: "a76.jpg", link: "f66.html" },
+            { src: "a80.jpg", link: "f67.html" },
+            { src: "a84.jpg", link: "f68.html" },
+            { src: "a86.jpg", link: "f69.html" },
+            { src: "a88.jpg", link: "f70.html" },
+            { src: "a90.jpg", link: "f71.html" },
+            { src: "a92.jpg", link: "f72.html" },
+            { src: "a94.jpg", link: "f73.html" },
+            { src: "a97.jpg", link: "f74.html" },
+            { src: "z1.jpg", link: "f75.html" },
+            { src: "z4.jpg", link: "f76.html" },
+            { src: "z7.jpg", link: "f77.html" },
+            { src: "z10.jpg", link: "f78.html" },
+            { src: "z13.jpg", link: "f79.html" },
+            { src: "z15.jpg", link: "f80.html" },
+            { src: "z19.jpg", link: "f81.html" },
+            { src: "z25.jpg", link: "f82.html" },
+            { src: "z80.jpg", link: "f83.html" },
+            { src: "z32.jpg", link: "f84.html" },
+            { src: "z35.jpg", link: "f85.html" },
+            { src: "z39.jpg", link: "f86.html" },
+            { src: "z42.jpg", link: "f87.html" },
+            { src: "z45.jpg", link: "f88.html" },
+            { src: "z47.jpg", link: "f89.html" },
+            { src: "z51.jpg", link: "f90.html" },
+            { src: "z54.jpg", link: "f91.html" },
+            { src: "z57.jpg", link: "f92.html" },
+            { src: "z60.jpg", link: "f93.html" },
+            { src: "z64.jpg", link: "f94.html" },
+            { src: "z66.jpg", link: "f95.html" },
+            { src: "z68.jpg", link: "f96.html" },
+            { src: "z71.jpg", link: "f97.html" },
+            { src: "z74.jpg", link: "f98.html" },
+            { src: "z77.jpg", link: "f99.html" },
+            { src: "z81.jpg", link: "f100.html" },
+            { src: "z84.jpg", link: "f101.html" },
+            { src: "z88.jpg", link: "f102.html" },
+            { src: "z91.jpg", link: "f103.html" },
+            { src: "z93.jpg", link: "f104.html" },
+            { src: "z97.jpg", link: "f105.html" },
+            { src: "z99.jpg", link: "f106.html" },
+            { src: "y1.jpg", link: "f107.html" },
+            { src: "y4.jpg", link: "f108.html" },
+            { src: "y6.jpg", link: "f109.html" },
+            { src: "y8.jpg", link: "f110.html" },
+            { src: "y11.jpg", link: "f111.html" },
+            { src: "y14.jpg", link: "f112.html" },
+            { src: "y17.jpg", link: "f113.html" },
+            { src: "y19.jpg", link: "f114.html" },
+            { src: "y22.jpg", link: "f115.html" },
+            { src: "y26.jpg", link: "f116.html" },
+            { src: "y29.jpg", link: "f117.html" },
+            { src: "y32.jpg", link: "f118.html" },
+            { src: "y36.jpg", link: "f119.html" },
+            { src: "y39.jpg", link: "f120.html" },
+            { src: "y42.jpg", link: "f121.html" },
+            { src: "y45.jpg", link: "f122.html" },
+            { src: "y47.jpg", link: "f123.html" },
+            { src: "y50.jpg", link: "f124.html" },
+            { src: "y52.jpg", link: "f125.html" },
+            { src: "y54.jpg", link: "f126.html" },
+            { src: "y57.jpg", link: "f127.html" },
+            { src: "y60.jpg", link: "f128.html" },
+            { src: "y63.jpg", link: "f129.html" },
+            { src: "y65.jpg", link: "f130.html" },
+            { src: "y68.jpg", link: "f131.html" },
+            { src: "y71.jpg", link: "f132.html" },
+            { src: "y73.jpg", link: "f133.html" },
+            { src: "y76.jpg", link: "f134.html" },
+            { src: "y78.jpg", link: "f135.html" },
+            { src: "y80.jpg", link: "f136.html" },
+            { src: "y82.jpg", link: "f137.html" },
+            { src: "y84.jpg", link: "f138.html" },
+            { src: "y86.jpg", link: "f139.html" },
+            { src: "y88.jpg", link: "f140.html" },
+            { src: "y91.jpg", link: "f141.html" },
+            { src: "y93.jpg", link: "f142.html" },
+            { src: "y95.jpg", link: "f143.html" },
+            { src: "y98.jpg", link: "f144.html" },
+            { src: "v1.jpg", link: "f145.html" },
+            { src: "v4.jpg", link: "f146.html" },
+            { src: "v7.jpg", link: "f147.html" },
+            { src: "v9.jpg", link: "f148.html" },
+            { src: "v29.jpg", link: "f162.html" },
+            { src: "v31.jpg", link: "f163.html" },
+            { src: "v32.jpg", link: "f164.html" },
+            { src: "v35.jpg", link: "f165.html" },
+            { src: "v38.jpg", link: "f166.html" }
+        ];
+
+        // Infinite scroll variables
+        let currentIndex = 0;
+        const batchSize = 12; // Number of images to load each time
+        let isLoading = false;
+        const imageGrid = document.getElementById('imageGrid');
+        const loadingElement = document.getElementById('loading');
+        const noMoreElement = document.getElementById('noMore');
+
+        // Function to load images
+        function loadImages() {
+            if (isLoading || currentIndex >= allImages.length) return;
+            
+            isLoading = true;
+            loadingElement.style.display = 'block';
+            
+            // Simulate loading delay (remove in production)
+            setTimeout(() => {
+                const endIndex = Math.min(currentIndex + batchSize, allImages.length);
+                
+                for (let i = currentIndex; i < endIndex; i++) {
+                    const imageData = allImages[i];
+                    const imageLink = document.createElement('a');
+                    imageLink.href = imageData.link;
+                    
+                    const image = document.createElement('img');
+                    image.src = imageData.src;
+                    image.alt = '';
+                    image.loading = "lazy"; // Native lazy loading
+                    
+                    imageLink.appendChild(image);
+                    imageGrid.appendChild(imageLink);
+                }
+                
+                currentIndex = endIndex;
+                isLoading = false;
+                loadingElement.style.display = 'none';
+                
+                // Show "no more content" message if all images are loaded
+                if (currentIndex >= allImages.length) {
+                    noMoreElement.style.display = 'block';
+                }
+            }, 800); // 800ms delay for simulation
+        }
+
+        // Check if user has scrolled near the bottom
+        function checkScroll() {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            
+            // Load more when user is 200px from the bottom
+            if (documentHeight - (scrollTop + windowHeight) < 200 && !isLoading) {
+                loadImages();
+            }
+        }
+
+        // Initialize with first batch of images
+        loadImages();
+
+        // Add scroll event listener
+        window.addEventListener('scroll', checkScroll);
+
+        // Your existing JavaScript
         let lastScroll = 0;
 
         window.addEventListener("scroll", () => {
@@ -363,16 +527,17 @@ img{
             const footer = document.getElementById("footer");
 
             if (current > lastScroll) {
-        
                 header.classList.add("hide");
                 footer.classList.add("hide");
             } else {
-            
                 header.classList.remove("hide");
                 footer.classList.remove("hide");
             }
 
             lastScroll = current;
+            
+            // Also check for infinite scroll
+            checkScroll();
         });
 
         function toggleMenu(){
@@ -380,6 +545,5 @@ img{
             menu.style.display = menu.style.display === "flex" ? "none" : "flex";
         }
     </script>
-
 </body>
 </html>
